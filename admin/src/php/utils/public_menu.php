@@ -9,8 +9,8 @@
                     <a class="nav-link active" aria-current="page" href="index_.php?page=accueil.php">Accueil</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="index_.php?page=pays.php">Produits</a>
-                </li>echo "# TechnoInternet2" >> README.md
+                    <a class="nav-link" href="index_.php?page=livre.php">Livre</a>
+                </li>
 
             </ul>
             <div class="ms-auto p-2">

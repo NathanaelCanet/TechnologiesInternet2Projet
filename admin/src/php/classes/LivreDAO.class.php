@@ -1,8 +1,7 @@
 <?php
 
-class PaysDAO
+class LivreDAO
 {
-
     private $_bd;
     private $_array = array();
 
@@ -11,28 +10,27 @@ class PaysDAO
         $this->_bd = $cnx;
     }
 
-    public function getPays()
+    public function getLivre()
     {
-        $query = "select * from pays";
+        $query = "select * from livre";
         try {
             $this->_bd->beginTransaction();
             $resultset = $this->_bd->prepare($query);
             $resultset->execute();
             $data = $resultset->fetchAll();
             foreach ($data as $d) {
-                $_array[] = new Pays($d);
+                $_array[] = new Livre($d);
             }
-            if(!empty($_array)){
+            if (!empty($_array)) {
                 return $_array;
-            }
-            else {
+            } else {
                 return null;
             }
-            return $_array;
+
             $this->_bd->commit();
         } catch (PDOException $e) {
             $this->_bd->rollback();
             print "Echec de la requête " . $e->getMessage();
         }
-    }}
-
+    }
+}
